@@ -37,7 +37,8 @@ class EventTrackingViewModel : ViewModel() {
                 response: Response<EventProperties>
             ) {
                 val eventProperties = response.body()
-                Log.e("mahsa",eventProperties.toString()  )            }
+                eventProperties?.let { Log.e("mahsa", it.eventName ) }
+            }
 
             override fun onFailure(call: Call<EventProperties>, t: Throwable) {
                 TODO("Not yet implemented")
