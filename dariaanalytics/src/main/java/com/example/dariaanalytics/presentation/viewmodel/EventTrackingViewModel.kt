@@ -30,14 +30,13 @@ class EventTrackingViewModel : ViewModel() {
         val eventName = eventName.value ?: return
 //        val eventJob = eventJob.value ?: return
         val eventJob = "job"
-        val eventProperties = EventProperties(eventName,eventJob)
-        apiService.sendEvent(eventProperties.eventName,eventProperties.eventJob).enqueue(object : Callback<EventProperties> {
+        apiService.sendEvent(eventName,eventJob).enqueue(object : Callback<EventProperties> {
             override fun onResponse(
                 call: Call<EventProperties>,
                 response: Response<EventProperties>
             ) {
                 val eventProperties = response.body()
-                eventProperties?.let { Log.e("mahsa", it.eventName ) }
+                eventProperties?.let { Log.e("mahsa", it.name ) }
             }
 
             override fun onFailure(call: Call<EventProperties>, t: Throwable) {

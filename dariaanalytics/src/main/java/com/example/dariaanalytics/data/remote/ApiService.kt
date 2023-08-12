@@ -10,7 +10,7 @@ interface ApiService {
     companion object {
         const val BASE_URL = "https://reqres.in/"
     }
-    @POST("https://reqres.in/api/users")
+    @POST("/api/users")
     @FormUrlEncoded
     fun sendEvent(@Field("name") eventName: String, @Field("job") eventJob: String ): Call<EventProperties>
 }

@@ -1,11 +1,10 @@
 package com.example.dariaanalytics.domain.model
 
 data class EventProperties(
-    val eventName: String,
-    val eventJob: String
+    val name: String,
+    val job: String,
+    val createdAt: String,
+    val id: String,
 ){
-    override fun toString(): String {
-        return "EventProperties(eventName='$eventName')"
-    }
 }
 
